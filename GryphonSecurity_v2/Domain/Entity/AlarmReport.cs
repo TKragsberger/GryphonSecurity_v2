@@ -17,7 +17,7 @@ namespace GryphonSecurity_v2.Domain.Entity
         DateTime date;
         DateTime time;
         String zone;
-        Boolean burglaryVandalismk;
+        Boolean burglaryVandalism;
         Boolean windowDoorClosed;
         Boolean apprehendedPerson;
         Boolean staffError;
@@ -25,7 +25,7 @@ namespace GryphonSecurity_v2.Domain.Entity
         Boolean technicalError;
         Boolean unknownReason;
         Boolean other;
-        Boolean cancelsDuringEmergency;
+        Boolean cancelDuringEmergency;
         Boolean coverMade;
         String remark;
         String name;
@@ -38,8 +38,8 @@ namespace GryphonSecurity_v2.Domain.Entity
         DateTime done;
 
         public AlarmReport(string customerName, long customerNumber, String streetAndHouseNumber, int zipCode, String city, long phonenumber, DateTime date, DateTime time, String zone,
-                Boolean burglaryVandalismk, Boolean windowDoorClosed, Boolean apprehendedPerson, Boolean staffError, Boolean nothingToReport, Boolean technicalError, Boolean unknownReason,
-                Boolean other, Boolean cancelsDuringEmergency, Boolean coverMade, String remark, String name, String installer, String controlCenter, DateTime guardRadioedDate,
+                Boolean burglaryVandalism, Boolean windowDoorClosed, Boolean apprehendedPerson, Boolean staffError, Boolean nothingToReport, Boolean technicalError, Boolean unknownReason,
+                Boolean other, Boolean cancelDuringEmergency, Boolean coverMade, String remark, String name, String installer, String controlCenter, DateTime guardRadioedDate,
                 DateTime guardRadioedFrom, DateTime guardRadioedTo, DateTime arrivedAt, DateTime done)
         {
             this.customerName = customerName;
@@ -51,7 +51,7 @@ namespace GryphonSecurity_v2.Domain.Entity
             this.date = date;
             this.time = time;
             this.zone = zone;
-            this.burglaryVandalismk = burglaryVandalismk;
+            this.burglaryVandalism = burglaryVandalism;
             this.windowDoorClosed = windowDoorClosed;
             this.apprehendedPerson = apprehendedPerson;
             this.staffError = staffError;
@@ -59,7 +59,7 @@ namespace GryphonSecurity_v2.Domain.Entity
             this.technicalError = technicalError;
             this.unknownReason = unknownReason;
             this.other = other;
-            this.cancelsDuringEmergency = cancelsDuringEmergency;
+            this.cancelDuringEmergency = cancelDuringEmergency;
             this.coverMade = coverMade;
             this.remark = remark;
             this.name = name;
@@ -126,10 +126,10 @@ namespace GryphonSecurity_v2.Domain.Entity
             set { zone = value; }
         }
 
-        public Boolean BurglaryVandalismk
+        public Boolean BurglaryVandalism
         {
-            get { return burglaryVandalismk; }
-            set { burglaryVandalismk = value; }
+            get { return burglaryVandalism; }
+            set { burglaryVandalism = value; }
         }
 
         public Boolean WindowDoorClosed
@@ -174,10 +174,10 @@ namespace GryphonSecurity_v2.Domain.Entity
             set { other = value; }
         }
 
-        public Boolean CancelsDuringEmergency
+        public Boolean CancelDuringEmergency
         {
-            get { return cancelsDuringEmergency; }
-            set { cancelsDuringEmergency = value; }
+            get { return cancelDuringEmergency; }
+            set { cancelDuringEmergency = value; }
         }
 
         public Boolean CoverMade

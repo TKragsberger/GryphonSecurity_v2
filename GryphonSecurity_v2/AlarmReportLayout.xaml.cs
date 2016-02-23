@@ -33,7 +33,7 @@ namespace GryphonSecurity_v2
             DateTime dateTB = DateTime.Parse(textBoxDate.Text, CultureInfo.InvariantCulture);
             DateTime timeTB = DateTime.Parse(textBoxTime.Text, CultureInfo.InvariantCulture);
             String zoneTB = textBoxZone.Text;
-            Boolean burglaryVandalismkCB = (Boolean)checkBoxBurglaryVandalism.IsChecked;
+            Boolean burglaryVandalismCB = (Boolean)checkBoxBurglaryVandalism.IsChecked;
             Boolean windowDoorClosedCB = (Boolean)checkBoxWindowDoorClosed.IsChecked;
             Boolean apprehendedPersonCB = (Boolean)checkBoxApprehendedPerson.IsChecked;
             Boolean staffErrorCB = (Boolean)checkBoxStaffError.IsChecked;
@@ -41,7 +41,7 @@ namespace GryphonSecurity_v2
             Boolean technicalErrorCB = (Boolean)checkBoxTechnicalError.IsChecked;
             Boolean unknownReasonCB = (Boolean)checkBoxUnknownReason.IsChecked;
             Boolean otherCB = (Boolean)checkBoxOther.IsChecked;
-            Boolean cancelsDuringEmergencyCB = (Boolean)checkBoxCancelsDuringEmergency.IsChecked;
+            Boolean cancelDuringEmergencyCB = (Boolean)checkBoxCancelsDuringEmergency.IsChecked;
             Boolean coverMadeCB = (Boolean)checkBoxCoverMade.IsChecked;
             String remarkTB = textBoxRemark.Text;
             String nameTB = textBoxName.Text;
@@ -52,8 +52,8 @@ namespace GryphonSecurity_v2
             DateTime guardRadioedToTB = DateTime.Parse(textBoxGuardRadioedTo.Text, CultureInfo.InvariantCulture);
             DateTime arrivedAtTB = DateTime.Parse(textBoxArrivedAt.Text, CultureInfo.InvariantCulture);
             DateTime doneTB = DateTime.Parse(textBoxDone.Text, CultureInfo.InvariantCulture);
-            if (controller.createAlarmReport(new AlarmReport(customerNameTB, customerNumberTB, streetAndHouseNumberTB, zipCodeTB, cityTB, phonenumberTB, dateTB, timeTB, zoneTB, burglaryVandalismkCB,
-                                        windowDoorClosedCB, apprehendedPersonCB, staffErrorCB, nothingToReportCB, technicalErrorCB, unknownReasonCB, otherCB, cancelsDuringEmergencyCB, coverMadeCB,
+            if (controller.createAlarmReport(new AlarmReport(customerNameTB, customerNumberTB, streetAndHouseNumberTB, zipCodeTB, cityTB, phonenumberTB, dateTB, timeTB, zoneTB, burglaryVandalismCB,
+                                        windowDoorClosedCB, apprehendedPersonCB, staffErrorCB, nothingToReportCB, technicalErrorCB, unknownReasonCB, otherCB, cancelDuringEmergencyCB, coverMadeCB,
                                         remarkTB, nameTB, installerTB, controlCenterTB, guardRadioedDateTB, guardRadioedFromTB, guardRadioedToTB, arrivedAtTB, doneTB)))
             {
                 MessageBox.Show(AppResources.ReportAlarmReportSuccess);
