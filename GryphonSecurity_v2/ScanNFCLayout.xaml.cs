@@ -9,6 +9,10 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Windows.Networking.Proximity;
 using System.Diagnostics;
+using Windows.Storage.Streams;
+using System.Runtime.InteropServices.WindowsRuntime;
+using NdefLibrary.Ndef;
+using System.Text;
 
 namespace GryphonSecurity_v2
 {
@@ -35,16 +39,40 @@ namespace GryphonSecurity_v2
         }
         private void messageReceived(ProximityDevice sender, ProximityMessage message)
         {
-          
+            Debug.WriteLine("Der sker noget");
+
+            //var buffer = message.Data.ToArray();
             
+            var buffer = DataReader.FromBuffer(message.Data);
+            Debug.WriteLine("1: " + buffer.ReadByte());
+            Debug.WriteLine("2: " + buffer.ReadByte());
+            int payloadLength = buffer.ReadByte();
+            Debug.WriteLine("5: " + buffer.ReadByte());
+            Debug.WriteLine("jaja length: " + payloadLength);
+            var payload = new byte[payloadLength];
+            Debug.WriteLine("3: " + payload);
+
+            buffer.ReadBytes(payload);
+                      
+            var langLen = (byte)(payload[0] & 0x3f);
+            Debug.WriteLine("LanLeng: " + langLen);
+            var textLeng = payload.Length - 1 - langLen;
+            var textBuf = new byte[textLeng];
+            System.Buffer.BlockCopy(payload, 1+langLen, textBuf, 0, textLeng);
+            //var messageType = Encoding.UTF8.GetString(buffer, 0, mimesize);
+            //Debug.WriteLine("Buffer: " + buffer + "buffer length: " + buffer.Length);
+            var scanned_message = Encoding.UTF8.GetString(textBuf, 0, textBuf.Length);
+
+
+
             Dispatcher.BeginInvoke(() =>
             {
-                Object b = null;
-                b = message;
-                textBlockTest.Text += "Message: " + message.GetType();
-                Debug.WriteLine("Message type: " + b.ToString());
-                    
-                Debug.WriteLine("Received from {0}:'{1}'", sender.DeviceId, message.DataAsString);
+                
+                Debug.WriteLine("Tekst: " + scanned_message);
+                textBlockTest.Text = scanned_message;
+
+
+
 
             });
 
