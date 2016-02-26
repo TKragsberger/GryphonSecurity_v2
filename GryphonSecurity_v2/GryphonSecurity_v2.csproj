@@ -101,6 +101,9 @@
     <Compile Include="Domain\Controller.cs" />
     <Compile Include="Domain\Entity\AlarmReport.cs" />
     <Compile Include="Domain\Entity\User.cs" />
+    <Compile Include="GPS.xaml.cs">
+      <DependentUpon>GPS.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="LoginLayout.xaml.cs">
       <DependentUpon>LoginLayout.xaml</DependentUpon>
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="AlarmReportLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GPS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
