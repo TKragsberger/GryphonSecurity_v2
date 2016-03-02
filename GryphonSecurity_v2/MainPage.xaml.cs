@@ -46,7 +46,6 @@ namespace GryphonSecurity
         {
             NavigationService.Navigate(new Uri("/AlarmReportLayout.xaml", UriKind.Relative));
         }
-
         private void loadup()
         {
             NavigationService.Navigate(new Uri("/LoginLayout.xaml", UriKind.Relative));
