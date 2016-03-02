@@ -30,8 +30,8 @@ namespace GryphonSecurity_v2
             int zipCodeTB = Convert.ToInt32(textBoxZipCode.Text);
             String cityTB = textBoxCity.Text;
             long phonenumberTB = Convert.ToInt64(textBoxPhonenumber.Text);
-            DateTime dateTB = DateTime.Parse(textBoxDate.Text, CultureInfo.InvariantCulture);
-            DateTime timeTB = DateTime.Parse(textBoxTime.Text, CultureInfo.InvariantCulture);
+            DateTime dateTB = (DateTime) textBoxDate.Value;
+            DateTime timeTB = (DateTime) textBoxTime.Value;
             String zoneTB = textBoxZone.Text;
             Boolean burglaryVandalismCB = (Boolean)checkBoxBurglaryVandalism.IsChecked;
             Boolean windowDoorClosedCB = (Boolean)checkBoxWindowDoorClosed.IsChecked;
@@ -47,11 +47,11 @@ namespace GryphonSecurity_v2
             String nameTB = textBoxName.Text;
             String installerTB = textBoxInstaller.Text;
             String controlCenterTB = textBoxControlCenter.Text;
-            DateTime guardRadioedDateTB = DateTime.Parse(textBoxGuardRadioedDate.Text, CultureInfo.InvariantCulture);
-            DateTime guardRadioedFromTB = DateTime.Parse(textBoxGuardRadioedFrom.Text, CultureInfo.InvariantCulture);
-            DateTime guardRadioedToTB = DateTime.Parse(textBoxGuardRadioedTo.Text, CultureInfo.InvariantCulture);
-            DateTime arrivedAtTB = DateTime.Parse(textBoxArrivedAt.Text, CultureInfo.InvariantCulture);
-            DateTime doneTB = DateTime.Parse(textBoxDone.Text, CultureInfo.InvariantCulture);
+            DateTime guardRadioedDateTB = (DateTime) textBoxGuardRadioedDate.Value;
+            DateTime guardRadioedFromTB = (DateTime) textBoxGuardRadioedFrom.Value;
+            DateTime guardRadioedToTB = (DateTime) textBoxGuardRadioedTo.Value;
+            DateTime arrivedAtTB = (DateTime) textBoxArrivedAt.Value;
+            DateTime doneTB = (DateTime) textBoxDone.Value;
             if (controller.createAlarmReport(new AlarmReport(customerNameTB, customerNumberTB, streetAndHouseNumberTB, zipCodeTB, cityTB, phonenumberTB, dateTB, timeTB, zoneTB, burglaryVandalismCB,
                                         windowDoorClosedCB, apprehendedPersonCB, staffErrorCB, nothingToReportCB, technicalErrorCB, unknownReasonCB, otherCB, cancelDuringEmergencyCB, coverMadeCB,
                                         remarkTB, nameTB, installerTB, controlCenterTB, guardRadioedDateTB, guardRadioedFromTB, guardRadioedToTB, arrivedAtTB, doneTB)))

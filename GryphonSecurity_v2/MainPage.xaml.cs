@@ -44,14 +44,8 @@ namespace GryphonSecurity
 
         private void alarmReportButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AlarmRapportLayout.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/AlarmReportLayout.xaml", UriKind.Relative));
         }
-
-        private void gPSButton_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/GPS.xaml", UriKind.Relative));
-        }
-
         private void loadup()
         {
             NavigationService.Navigate(new Uri("/LoginLayout.xaml", UriKind.Relative));

@@ -34,6 +34,7 @@ namespace GryphonSecurity_v2
             controller.scanNFCTag();
             
             //  Debug.WriteLine("Published Message. ID is {0}", Id);
+        }
 
 
         }
