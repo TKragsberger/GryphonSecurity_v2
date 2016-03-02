@@ -13,6 +13,7 @@ using System.IO.IsolatedStorage;
 using System.Device.Location;
 using Microsoft.Phone.Maps.Services;
 using GryphonSecurity_v2.Resources;
+using System.Diagnostics;
 
 namespace GryphonSecurity_v2
 {
@@ -115,7 +116,9 @@ namespace GryphonSecurity_v2
                     {
                         var result = args.Result.FirstOrDefault();
                         latitude = result.GeoCoordinate.Latitude;
+                        Debug.WriteLine("Latitude: " + latitude);
                         longitude = result.GeoCoordinate.Longitude;
+                        Debug.WriteLine("Longitude: " + longitude);
                         LatitudeTextBlockFromAddress.Text = latitude + "";
                         LongitudeTextBlockFromAddress.Text = longitude + "";
                         targetCoordinates = new GeoCoordinate(latitude, longitude);
