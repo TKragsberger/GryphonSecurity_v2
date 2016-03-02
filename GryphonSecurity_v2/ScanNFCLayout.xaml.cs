@@ -18,10 +18,6 @@ namespace GryphonSecurity_v2
 {
     public partial class ScanNFCLayout : PhoneApplicationPage
     {
-
-        
-
-
         private Windows.Networking.Proximity.ProximityDevice device;
         public ScanNFCLayout()
         {
@@ -34,15 +30,12 @@ namespace GryphonSecurity_v2
 
             device.SubscribeForMessage("NDEF", messageReceived);
             //  Debug.WriteLine("Published Message. ID is {0}", Id);
-
-
         }
+
         private void messageReceived(ProximityDevice sender, ProximityMessage message)
         {
             Debug.WriteLine("Der sker noget");
-
             //var buffer = message.Data.ToArray();
-            
             var buffer = DataReader.FromBuffer(message.Data);
             Debug.WriteLine("1: " + buffer.ReadByte());
             Debug.WriteLine("2: " + buffer.ReadByte());
@@ -63,21 +56,11 @@ namespace GryphonSecurity_v2
             //Debug.WriteLine("Buffer: " + buffer + "buffer length: " + buffer.Length);
             var scanned_message = Encoding.UTF8.GetString(textBuf, 0, textBuf.Length);
 
-
-
             Dispatcher.BeginInvoke(() =>
-            {
-                
+            {          
                 Debug.WriteLine("Tekst: " + scanned_message);
                 textBlockTest.Text = scanned_message;
-
-
-
-
-            });
-
-           
-             
+            });    
         }
 
         private void initializeProximitySample()

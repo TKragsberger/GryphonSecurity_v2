@@ -4,7 +4,7 @@
   <Languages xmlns="">
     <Language code="da-DK" />
   </Languages>
-  <App xmlns="" ProductID="{56ec4685-a26b-4f5c-9753-2e306aee4fd0}" Title="GryphonSecurity_v2" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="GryphonSecurity_v2 author" Description="Sample description" SDOptOut="false" BackUpOptOut="false" Publisher="GryphonSecurity_v2" PublisherID="{667a7e0c-998b-4d5d-8197-438f88eaeaa8}">
+  <App xmlns="" ProductID="{56ec4685-a26b-4f5c-9753-2e306aee4fd0}" Title="Gryphon Security" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="GryphonSecurity_v2 author" Description="Sample description" SDOptOut="false" BackUpOptOut="false" Publisher="GryphonSecurity_v2" PublisherID="{667a7e0c-998b-4d5d-8197-438f88eaeaa8}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -19,22 +19,25 @@
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="GryphonSecurity_v2Token" TaskName="_default">
-        <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+        <TemplateIconic>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconicTileSmall.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>GryphonSecurity_v2</Title>
-          <BackContent>
-          </BackContent>
-          <BackBackgroundImageURI>
-          </BackBackgroundImageURI>
-          <BackTitle>
-          </BackTitle>
-          <DeviceLockImageURI>
+          <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconicTileMediumLarge.png</IconImageURI>
+          <Title>Gryphon Security</Title>
+          <Message>
+          </Message>
+          <BackgroundColor>
+          </BackgroundColor>
+          <HasLarge>false</HasLarge>
+          <LargeContent1>
+          </LargeContent1>
+          <LargeContent2>
+          </LargeContent2>
+          <LargeContent3>
+          </LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
-        </TemplateFlip>
+        </TemplateIconic>
       </PrimaryToken>
     </Tokens>
     <ScreenResolutions>
